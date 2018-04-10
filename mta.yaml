@@ -1,0 +1,49 @@
+ID: cfmta
+_schema-version: '2.0'
+version: 1.0.0
+
+modules:
+
+ - name: java-module
+   type: java
+   path: java-module
+   parameters:
+      disk-quota: 256M
+      memory: 512M
+   build-parameters:
+      builder: maven
+   requires:
+     - name: cfmta-uaa
+
+ - name: py-module
+   type: python
+   path: python-module
+   parameters:
+      disk-quota: 256M
+      memory: 128M
+      command: python app.py
+   requires:
+     - name: cfmta-uaa
+
+ - name: approuter
+   type: nodejs
+   path: approuter
+   parameters:
+      disk-quota: 256M
+      memory: 256M
+   properties:
+     destinations: >
+       [
+         {"name":"jmodule", "url":"https://java-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true },
+         {"name":"pymodule", "url":"https://py-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true }
+       ]
+   requires:
+     - name: cfmta-uaa
+
+resources:
+ - name: cfmta-uaa
+   type: com.sap.xs.uaa
+   parameters:
+     service: xsuaa
+     service-plan: application
+     path: security-config/xs-security.json

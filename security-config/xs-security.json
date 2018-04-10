@@ -1,0 +1,33 @@
+{
+  "xsappname": "cf-mta-demo",
+  "tenant-mode": "dedicated",
+  "scopes": [{
+      "name": "$XSAPPNAME.Read",
+      "description": "Read operation"
+    },
+    {
+      "name": "$XSAPPNAME.Create",
+      "description": "Create operation"
+    },
+    {
+      "name": "$XSAPPNAME.Delete",
+      "description": "Delete operation"
+    }
+  ],
+  "role-templates": [{
+      "name": "RT_Manage",
+      "description": "Perform create and delete operations",
+      "scope-references": [
+        "$XSAPPNAME.Create", "$XSAPPNAME.Delete"
+      ]
+    },
+    {
+      "name": "RT_Read",
+      "description": "Perform read operation only",
+      "scope-references": [
+        "$XSAPPNAME.Read"
+      ]
+    }
+
+  ]
+}
