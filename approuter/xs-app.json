@@ -11,14 +11,14 @@
             "authenticationType": "none"
         },
         {
-            "source": "^/jmodule1(.*)$",
+            "source": "^/jmodule(.*)$",
             "target": "$1",
             "destination": "jmodule",
             "scope": "$XSAPPNAME.Read",
             "authenticationType": "xsuaa"
         },
         {
-            "source": "^/pymodule1(.*)$",
+            "source": "^/pymodule(.*)$",
             "target": "$1",
             "destination": "pymodule",
             "authenticationType": "none"
