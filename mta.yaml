@@ -7,6 +7,7 @@ modules:
  - name: java-module
    type: java
    path: java-module
+   host: i123456-java-module
    parameters:
       disk-quota: 256M
       memory: 512M
@@ -18,6 +19,7 @@ modules:
  - name: py-module
    type: python
    path: python-module
+   host: i123456-py-module
    parameters:
       disk-quota: 256M
       memory: 128M
@@ -34,8 +36,8 @@ modules:
    properties:
      destinations: >
        [
-         {"name":"jmodule", "url":"https://java-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true },
-         {"name":"pymodule", "url":"https://py-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true }
+         {"name":"jmodule", "url":"https://i123456-java-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true },
+         {"name":"pymodule", "url":"https://i123456-py-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true }
        ]
    requires:
      - name: cfmta-uaa
