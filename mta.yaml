@@ -4,10 +4,9 @@ version: 1.0.0
 
 modules:
 
- - name: java-module
+ - name: i123456-java-module
    type: java
    path: java-module
-   host: i123456-java-module
    parameters:
       disk-quota: 256M
       memory: 512M
@@ -16,10 +15,9 @@ modules:
    requires:
      - name: cfmta-uaa
 
- - name: py-module
+ - name: i123456-py-module
    type: python
    path: python-module
-   host: i123456-py-module
    parameters:
       disk-quota: 256M
       memory: 128M
