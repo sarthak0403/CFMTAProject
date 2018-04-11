@@ -4,7 +4,7 @@ version: 1.0.0
 
 modules:
 
- - name: i123456-java-module
+ - name: java-module
    type: java
    path: java-module
    parameters:
@@ -15,7 +15,7 @@ modules:
    requires:
      - name: cfmta-uaa
 
- - name: i123456-py-module
+ - name: py-module
    type: python
    path: python-module
    parameters:
@@ -34,8 +34,8 @@ modules:
    properties:
      destinations: >
        [
-         {"name":"jmodule", "url":"https://i123456-java-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true },
-         {"name":"pymodule", "url":"https://i123456-py-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true }
+         {"name":"jmodule", "url":"https://i123456trial-dev-java-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true },
+         {"name":"pymodule", "url":"https://i123456trial-dev-py-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true }
        ]
    requires:
      - name: cfmta-uaa

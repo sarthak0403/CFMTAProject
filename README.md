@@ -32,7 +32,19 @@ For this demo, you'll need to clone a sample MTA project from the GitHub reposit
 This project also contains an XSUAA service which is used by the approuter for authentication. The service instance will be automatically deployed to your select CF space using the properties defined in the mta.yaml file.
 
 ## Step 5: Build the MTAR File
-Before buidling the MTAR file for this project, you need to update the mta.yaml file in your root directory. Open the mta.yaml file and replace all the occurrences of the text "i123456" with your own I-/C-/D-/S- number or some other unique number/text.
+Before buidling the MTAR file for this project, you need to update the mta.yaml file in your root directory. Open the mta.yaml file and find the following urls:
+```
+https://i123456trial-dev-java-module.cfapps.eu10.hana.ondemand.com
+
+https://i123456trial-dev-py-module.cfapps.eu10.hana.ondemand.com
+```
+Next, update the above URLs in the following formats:
+```
+https://<global-account-name>-<space-name>-java-module.cfapps.<your-region>.hana.ondemand.com
+
+https://<global-account-name>-<space-name>-py-module.cfapps.<your-region>.hana.ondemand.com
+```
+Now, save the mta.yaml file and you're good to build the MTAR file.
 
 To build the MTAR file, go to the root directory of the MTA project and execute the following command which uses the MTA Archive Builder:
 ```
