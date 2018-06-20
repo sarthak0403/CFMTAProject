@@ -34,15 +34,15 @@ This project also contains an XSUAA service which is used by the approuter for a
 ## Step 5: Build the MTAR File
 Before buidling the MTAR file for this project, you need to update the mta.yaml file in your root directory. Open the mta.yaml file and find the following urls:
 ```
-https://i123456trial-dev-java-module.cfapps.eu10.hana.ondemand.com
+https://i123456trial-trial-dev-java-module.cfapps.eu10.hana.ondemand.com
 
-https://i123456trial-dev-py-module.cfapps.eu10.hana.ondemand.com
+https://i123456trial-trial-dev-py-module.cfapps.eu10.hana.ondemand.com
 ```
 Next, update the above URLs in the following formats:
 ```
-https://<global-account-name>-<space-name>-java-module.cfapps.<your-region>.hana.ondemand.com
+https://<global-account-name>-<org-name>-<space-name>-java-module.cfapps.<your-region>.hana.ondemand.com
 
-https://<global-account-name>-<space-name>-py-module.cfapps.<your-region>.hana.ondemand.com
+https://<global-account-name>-<org-name>-<space-name>-py-module.cfapps.<your-region>.hana.ondemand.com
 ```
 Now, save the mta.yaml file and you're good to build the MTAR file.
 
@@ -79,7 +79,7 @@ After this, you should be able to see a cfmta.mtar file in the target directory 
 ## Step 6: Deploy the MTAR file to CF
 To deploy the generated MTAR file, run the following command from the root directory of your project:
 ```
-cf deploy target\mymta1.mtar
+cf deploy target\cfmta.mtar
 ```
 
 Now, go to your SCP CF Cockpit and start exploring the applications. Use the approuter module to access the other modules.
