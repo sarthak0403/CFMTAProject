@@ -34,8 +34,8 @@ modules:
    properties:
      destinations: >
        [
-         {"name":"jmodule", "url":"https://i123456trial-dev-java-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true },
-         {"name":"pymodule", "url":"https://i123456trial-dev-py-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true }
+         {"name":"jmodule", "url":"https://i123456trial-trial-dev-java-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true },
+         {"name":"pymodule", "url":"https://i123456trial-trial-dev-py-module.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true }
        ]
    requires:
      - name: cfmta-uaa
